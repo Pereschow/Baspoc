@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZIT_ABAP_RESOURCE_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ABAP_Resource" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CrNo"/>
+                    <PropertyRef Name="CrType"/>
+                </Key>
+                <Property Name="CrNo" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="CR NO" sap:updatable="false"/>
+                <Property Name="CrType" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="CR Type" sap:updatable="false"/>
+                <Property Name="CrDesc" Type="Edm.String" MaxLength="100" sap:label="CR Description"/>
+                <Property Name="CrPrio" Type="Edm.String" MaxLength="20" sap:label="CR Priority"/>
+                <Property Name="CrModule" Type="Edm.String" MaxLength="100" sap:label="CR Module"/>
+                <Property Name="CrFunc" Type="Edm.String" MaxLength="100" sap:label="CR Func Assignee"/>
+                <Property Name="CrTech" Type="Edm.String" MaxLength="100" sap:label="CR Tech Assignee"/>
+                <Property Name="CrReqD" Type="Edm.DateTime" Precision="7" sap:label="CR Requested Date"/>
+                <Property Name="CrStatus" Type="Edm.String" MaxLength="20" sap:label="CR Status"/>
+                <Property Name="CrDocUrl" Type="Edm.String" MaxLength="200" sap:label="CR Document URL"/>
+                <Property Name="CrRemarks" Type="Edm.String" MaxLength="255" sap:label="CR Remarks"/>
+                <Property Name="CrTemandays" Type="Edm.Decimal" Precision="5" Scale="2" sap:label="CR Te Mandays"/>
+                <Property Name="CrFemandays" Type="Edm.Decimal" Precision="5" Scale="2" sap:label="CR Fe Mandays"/>
+                <Property Name="CrExceed" Type="Edm.String" MaxLength="1" sap:label="CR Exceed Estimation"/>
+            </EntityType>
+            <EntityType Name="CRPriority" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CrPrio"/>
+                </Key>
+                <Property Name="CrPrio" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="CR Priority" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="CRTYPE" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CrType"/>
+                </Key>
+                <Property Name="CrType" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="CR Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZIT_ABAP_RESOURCE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ABAP_ResourceSet" EntityType="ZIT_ABAP_RESOURCE_SRV.ABAP_Resource" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="CRPrioritySet" EntityType="ZIT_ABAP_RESOURCE_SRV.CRPriority" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="CRTYPESet" EntityType="ZIT_ABAP_RESOURCE_SRV.CRTYPE" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://fioritest.rgei.com:8443/sap/opu/odata/sap/ZIT_ABAP_RESOURCE_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://fioritest.rgei.com:8443/sap/opu/odata/sap/ZIT_ABAP_RESOURCE_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
