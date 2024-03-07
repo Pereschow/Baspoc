@@ -152,6 +152,22 @@
                     </Record>
                 </Annotation>
             </Annotations>
+            <Annotations Target="ZIT_ABAP_RESOURCE_SRV.ABAP_Resource/CrStatus">
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="ValueListProperty" String="CrStatus"/>
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CrStatus"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="CollectionPath" String="CRStatusSet"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>

@@ -34,10 +34,17 @@
                 </Key>
                 <Property Name="CrType" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="CR Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
             </EntityType>
+            <EntityType Name="CRStatus" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CrStatus"/>
+                </Key>
+                <Property Name="CrStatus" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="CR Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
             <EntityContainer Name="ZIT_ABAP_RESOURCE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
                 <EntitySet Name="ABAP_ResourceSet" EntityType="ZIT_ABAP_RESOURCE_SRV.ABAP_Resource" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
                 <EntitySet Name="CRPrioritySet" EntityType="ZIT_ABAP_RESOURCE_SRV.CRPriority" sap:pageable="false" sap:content-version="1"/>
                 <EntitySet Name="CRTYPESet" EntityType="ZIT_ABAP_RESOURCE_SRV.CRTYPE" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="CRStatusSet" EntityType="ZIT_ABAP_RESOURCE_SRV.CRStatus" sap:pageable="false" sap:content-version="1"/>
             </EntityContainer>
             <atom:link rel="self" href="http://fioritest.rgei.com:8443/sap/opu/odata/sap/ZIT_ABAP_RESOURCE_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
             <atom:link rel="latest-version" href="http://fioritest.rgei.com:8443/sap/opu/odata/sap/ZIT_ABAP_RESOURCE_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
